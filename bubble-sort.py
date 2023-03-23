@@ -6,8 +6,6 @@ import random
 import re
 import sys
 
-#
-
 def countSwaps(a):
     numSwaps = 0
     for i in range(len(a)):

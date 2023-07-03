@@ -7,18 +7,17 @@ import re
 import sys
 
 
-
 def insertionSort1(n, arr):
-    num_to_insert = arr[n -1]
-    for i in range(n-1, -1, -1):
-        if arr[i - 1] > num_to_insert and i != 0:
-            arr[i] = arr[i -1]
+    for i in range(1, n):
+        j = i - 1   
+        key = arr[i]
+
+        while j >= 0 and key < arr[j]:
+            arr[j + 1] = arr[j]
+            j = j - 1
             print(*arr)
-        else:
-            arr[i] = num_to_insert
-            print(*arr)
-            break
-            
+        arr[j + 1] = key
+    print(*arr)
 
 if __name__ == '__main__':
     n = int(input().strip())
@@ -26,3 +25,5 @@ if __name__ == '__main__':
     arr = list(map(int, input().rstrip().split()))
 
     insertionSort1(n, arr)
+
+
